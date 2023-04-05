@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Rating from "./Rating";
 import { AiFillEye, AiFillHeart } from "react-icons/ai";
 // import Quickview from "./Quickview";
@@ -32,6 +33,8 @@ const ProductCard = ({
   const closeQuickview = () => {
     setQuickview(false);
   };
+
+  const router = useRouter();
 
   return (
     <>
@@ -74,7 +77,10 @@ const ProductCard = ({
             </div>
             <p className="font-semibold capitalize line-clamp-1">{name}</p>
             <p className="text-sm font-semibold">Rs. {price}</p>
-            <button className="mt-2 w-full rounded bg-black  px-4 py-2  text-white hover:bg-[#222]">
+            <button
+              className="mt-2 w-full rounded bg-black  px-4 py-2  text-white hover:bg-[#222]"
+              onClick={() => router.push(`/cart/${id}?qty=1`)}
+            >
               Add to Cart
             </button>
           </div>

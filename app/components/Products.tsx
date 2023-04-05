@@ -3,7 +3,6 @@
 import { productType } from "../types/types";
 import Product from "./Product";
 const Products = ({ products }: { products: productType[] }) => {
-  console.log(products);
   return (
     <div className="bg-gray-200 md:pb-28">
       <div className=" mx-auto flex max-w-[1500px]  md:w-11/12">

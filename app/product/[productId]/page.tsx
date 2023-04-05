@@ -6,8 +6,6 @@ const ProductDetail = async ({ params }: { params: { productId: string } }) => {
   );
   const { data } = res;
 
-  console.log(data);
-
   return (
     <div>
       <Detail data={data} />
